@@ -1,0 +1,90 @@
+from tkinter import*
+import datetime
+
+clock = Tk()
+clock.title('digital clock ')
+clock.geometry('1000x500')
+clock.config(bg='yellow')
+
+def date_time():
+    time = datetime.datetime.now()
+    hr = time.strftime('%I')
+    mi_n = time.strftime('%M')
+    sec = time.strftime('%S')
+    ap = time.strftime('%p')
+    date = time.strftime('%d')
+    month = time.strftime('%m')
+    year = time.strftime('%y')
+    day = time.strftime('%a')
+
+    lab_hr.config(text=hr)
+    lab_hr1.config(text=mi_n)
+    lab_hr2.config(text=sec)
+    lab_hr3.config(text=ap)
+
+    lab_hr4.config(text=date)
+    lab_hr5.config(text=month)
+    lab_hr6.config(text=year)
+    lab_hr7.config(text=day)
+    lab_hr.after(200,date_time)
+
+# box number1/hour
+lab_hr = Label(clock,text="00",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_hr.place(x=40,y=40,height=110,width=100)
+
+lab_min = Label(clock,text="Hour",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_min.place(x=40,y=170,height=30,width=100)
+
+# box number2/min
+lab_hr1 = Label(clock,text="00",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_hr1.place(x=300,y=40,height=110,width=100)
+
+lab_min1 = Label(clock,text="Min",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_min1.place(x=300,y=170,height=30,width=100)
+
+# box number3/sec
+lab_hr2 = Label(clock,text="00",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_hr2.place(x=560,y=40,height=110,width=100)
+
+lab_min2 = Label(clock,text="Sec",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_min2.place(x=560,y=170,height=30,width=100)
+
+# box number 4/am or pm 
+lab_hr3 = Label(clock,text="00",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_hr3.place(x=810,y=40,height=110,width=100)
+
+lab_min3 = Label(clock,text="Am or Pm ",font=('Time New Roman',15,'bold'),bg='red',fg='white')
+lab_min3.place(x=810,y=170,height=30,width=100)
+
+# box number5/date
+lab_hr4 = Label(clock,text="00",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_hr4.place(x=40,y=300,height=110,width=100)
+
+lab_min4 = Label(clock,text="Date",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_min4.place(x=40,y=430,height=30,width=100)
+
+# box number6/month
+lab_hr5 = Label(clock,text="00",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_hr5.place(x=300,y=300,height=110,width=100)
+
+lab_min5 = Label(clock,text="Month",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_min5.place(x=300,y=430,height=30,width=100)
+
+# box number7/year
+lab_hr6 = Label(clock,text="00",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_hr6.place(x=560,y=300,height=110,width=100)
+
+lab_min6 = Label(clock,text="Year",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_min6.place(x=560,y=430,height=30,width=100)
+
+# box number 8/day
+lab_hr7 = Label(clock,text="00",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_hr7.place(x=810,y=300,height=110,width=100)
+
+lab_min7 = Label(clock,text="Day",font=('Time New Roman',20,'bold'),bg='red',fg='white')
+lab_min7.place(x=810,y=430,height=30,width=100)
+
+date_time()
+
+
+clock.mainloop()
